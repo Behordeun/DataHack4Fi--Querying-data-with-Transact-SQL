@@ -1,0 +1,20 @@
+Q1-
+	SELECT ProductName,UnitPrice FROM Products
+	Where Unitprice> (SELECT AVG(UnitPrice) FROM [Order Details])
+
+
+	Q2-
+	SELECT FirstName, EmployeeID FROM Employees
+	Where EmployeeID in (SELECT EmployeeID From Orders where ShipCountry='USA')
+
+
+	Q3-
+	CREATE TABLE #ProductNames
+	(ProductName VARCHAR(40));
+
+
+	INSERT INTO #ProductNames
+	SELECT ProductName FROM Products;
+
+
+	SELECT * FROM #ProductNames;
